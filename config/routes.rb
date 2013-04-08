@@ -1,4 +1,11 @@
 Mailgate::Application.routes.draw do
+
+  match "session/create" => "session#create", :as => :session_create
+  match "session/activate/:token" => "session#activate", :as => :session_activate
+  match "session/user" => "session#user", :as => :session_user
+
+  resources :routes , :only => [:index, :create, :show, :update, :destroy]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

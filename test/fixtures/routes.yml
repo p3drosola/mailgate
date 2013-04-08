@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  email: MyString
+  forward_to: MyString
+  forward_count: 1
+  enabled: false
+
+two:
+  email: MyString
+  forward_to: MyString
+  forward_count: 1
+  enabled: false
