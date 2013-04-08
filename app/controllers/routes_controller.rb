@@ -1,11 +1,10 @@
 class RoutesController < ApplicationController
 
+  before_filter :authenticated!
   before_filter :find_route, :only => [:view, :update, :destroy]
 
   def index
-
-    render :json => Route.where(:email => params[:email])
-
+    render :json => current_user.routes
   end
 
   def view
@@ -38,7 +37,7 @@ class RoutesController < ApplicationController
 
   protected
   def find_route
-    @route = Route.find_by_id(params[:id])
+    @route = current_user.routes.find_by_id(params[:id])
   end
 
 end

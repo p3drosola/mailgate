@@ -1,4 +1,7 @@
 class SessionController < ApplicationController
+
+  before_filter :authenticated!, :only => [:user]
+
   def create
 
     if params[:email].nil? then not_found end
@@ -15,7 +18,7 @@ class SessionController < ApplicationController
       # creates a new auth token
       @token = AuthToken.create(:user_id => @user.id)
       UserMailer.activate_token(@token).deliver
-      head :json => {:message => 'email sent'}
+      render :json => {:message => 'email sent'}
     else
       # authenticated
       login(@user)
@@ -40,15 +43,10 @@ class SessionController < ApplicationController
   end
 
   def user
-    user = User.find_by_id(session[:user_id])
-    if user.nil?
-      head 404
-    else
-      render :json => user
-    end
+    render :json => current_user
   end
 
-  protected
+  private
   def login(user)
     session[:user_id] = user.id
   end

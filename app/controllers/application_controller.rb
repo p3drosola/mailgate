@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
   def not_found
     raise ActionController::RoutingError.new('Not Found')
   end
+
+  def authenticated!
+    render :json => {:message => 'not authorized'}, :status => 401 unless current_user
+  end
 end

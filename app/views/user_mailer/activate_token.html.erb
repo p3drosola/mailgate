@@ -6,7 +6,7 @@
   <body>
     <h1>Welcome to Mailgate, <%= @user.name || '' %></h1>
     <p>
-      Since we know it's a pain to remember passwords, our system ouses <b>passwordless authentication</b>. All you need to do is click the link below to authorize this computer.
+      Since we know it's a pain to remember passwords, our system uses <b>passwordless authentication</b>. All you need to do is click the link below to authorize this computer.
     </p>
     <p>
       <%= link_to @activation_url, @activation_url %>
