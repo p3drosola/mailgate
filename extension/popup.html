@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="js/jquery.js"></script>
+    <script src="js/popup.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+
+    <div class="pane active" id="loading">
+        <p class="label">Loading</p>
+    </div>
+
+
+
+    <div class="pane" id="email">
+      <input type="text" id="email-input">
+      <div class="buttons">
+        <button class="copy">Copy</button>
+      </div>
+      <p class="small">Email generated for <span id="host-name">this website</span><p>
+      <img class="settings" alt="Settings" src="settings.png">
+    </div>
+
+
+
+
+    <div class="pane" id="settings">
+
+      <p class="label">What's your email?</p>
+      <input type="text" id="preference-email-input">
+      <div class="buttons">
+        <button class="save">Save</button>
+      </div>
+    </div>
+
+
+  </body>
+</html>
+
